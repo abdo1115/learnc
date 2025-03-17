@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprendre C# - Guide pour débutants</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #68217a;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #9b4f96;
+            padding: 0.5rem;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+        nav ul li a:hover {
+            background-color: #68217a;
+            border-radius: 4px;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+        }
+        code {
+            background-color: #f4f4f4;
+            border-radius: 4px;
+            padding: 0.2rem 0.4rem;
+            font-family: 'Consolas', monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+        }
+        .example {
+            border-left: 4px solid #68217a;
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Apprendre C#</h1>
+        <p>Guide complet pour débutants</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#bases">Les bases</a></li>
+            <li><a href="#variables">Variables</a></li>
+            <li><a href="#conditions">Conditions</a></li>
+            <li><a href="#boucles">Boucles</a></li>
+            <li><a href="#fonctions">Fonctions</a></li>
+            <li><a href="#classes">Classes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introduction" class="section">
+            <h2>Introduction à C#</h2>
+            <p>C# (prononcé "C sharp") est un langage de programmation moderne, orienté objet, développé par Microsoft dans le cadre de sa plateforme .NET. Il est utilisé pour créer :</p>
+            <ul>
+                <li>Applications de bureau</li>
+                <li>Applications web</li>
+                <li>Applications mobiles</li>
+                <li>Jeux vidéo (avec Unity)</li>
+                <li>Applications d'entreprise</li>
+            </ul>
+            <p>C# combine la puissance de C++ avec la simplicité de Visual Basic, tout en offrant des fonctionnalités modernes comme la gestion automatique de la mémoire.</p>
+        </section>
+
+        <section id="installation" class="section">
+            <h2>Installation de l'environnement</h2>
+            <p>Pour commencer à programmer en C#, vous avez besoin de :</p>
+            <ol>
+                <li>
+                    <strong>Visual Studio</strong> ou <strong>Visual Studio Code</strong>
+                    <p>Téléchargez Visual Studio Community (gratuit) sur le site officiel de Microsoft.</p>
+                </li>
+                <li>
+                    <strong>.NET SDK</strong>
+                    <p>Installez le SDK .NET pour compiler et exécuter vos programmes C#.</p>
+                </li>
+            </ol>
+            <div class="example">
+                <p>Visual Studio inclut tout ce dont vous avez besoin pour commencer à développer en C#.</p>
+            </div>
+        </section>
+
+        <section id="bases" class="section">
+            <h2>Les bases de C#</h2>
+            <p>Voici un premier programme C# classique :</p>
+            <pre>
+using System;
+
+namespace MonPremierProgramme
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Bonjour, monde !");
+            Console.ReadLine();
+        }
+    }
+}
+            </pre>
+            <p>Explications :</p>
+            <ul>
+                <li><code>using System;</code> - Importe les fonctionnalités du namespace System</li>
+                <li><code>namespace</code> - Organise votre code</li>
+                <li><code>class Program</code> - Définit une classe nommée Program</li>
+                <li><code>static void Main()</code> - Point d'entrée de votre programme</li>
+                <li><code>Console.WriteLine()</code> - Affiche du texte dans la console</li>
+                <li><code>Console.ReadLine()</code> - Attend une entrée de l'utilisateur</li>
+            </ul>
+        </section>
+
+        <section id="variables" class="section">
+            <h2>Variables et types de données</h2>
+            <p>C# est un langage fortement typé. Voici les types de base :</p>
+            <ul>
+                <li><code>int</code> - Nombres entiers (ex: 42)</li>
+                <li><code>double</code> - Nombres à virgule flottante (ex: 3.14)</li>
+                <li><code>bool</code> - Valeurs booléennes (true/false)</li>
+                <li><code>char</code> - Caractères uniques (ex: 'A')</li>
+                <li><code>string</code> - Chaînes de caractères (ex: "Bonjour")</li>
+            </ul>
+            <p>Exemple d'utilisation des variables :</p>
+            <pre>
+int age = 25;
+double taille = 1.75;
+bool estEtudiant = true;
+char grade = 'A';
+string nom = "Jean Dupont";
+
+Console.WriteLine($"Nom: {nom}, Age: {age}, Taille: {taille}m, Étudiant: {estEtudiant}, Grade: {grade}");
+            </pre>
+        </section>
+
+        <section id="conditions" class="section">
+            <h2>Structures conditionnelles</h2>
+            <p>Les structures conditionnelles permettent d'exécuter du code selon certaines conditions.</p>
+            <h3>If-else</h3>
+            <pre>
+int age = 18;
+
+if (age >= 18)
+{
+    Console.WriteLine("Vous êtes majeur");
+}
+else
+{
+    Console.WriteLine("Vous êtes mineur");
+}
+            </pre>
+
+            <h3>Switch</h3>
+            <pre>
+char grade = 'B';
+
+switch (grade)
+{
+    case 'A':
+        Console.WriteLine("Excellent");
+        break;
+    case 'B':
+        Console.WriteLine("Bien");
+        break;
+    case 'C':
+        Console.WriteLine("Passable");
+        break;
+    default:
+        Console.WriteLine("À améliorer");
+        break;
+}
+            </pre>
+        </section>
+
+        <section id="boucles" class="section">
+            <h2>Boucles</h2>
+            <p>Les boucles permettent de répéter des actions.</p>
+            <h3>Boucle for</h3>
+            <pre>
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine($"Itération {i}");
+}
+            </pre>
+
+            <h3>Boucle while</h3>
+            <pre>
+int compteur = 0;
+while (compteur < 5)
+{
+    Console.WriteLine($"Compteur: {compteur}");
+    compteur++;
+}
+            </pre>
+
+            <h3>Boucle foreach</h3>
+            <pre>
+string[] fruits = { "pomme", "banane", "orange", "kiwi" };
+
+foreach (string fruit in fruits)
+{
+    Console.WriteLine(fruit);
+}
+            </pre>
+        </section>
+
+        <section id="fonctions" class="section">
+            <h2>Méthodes (Fonctions)</h2>
+            <p>Les méthodes sont des blocs de code réutilisables :</p>
+            <pre>
+static void AfficherMessage(string message)
+{
+    Console.WriteLine(message);
+}
+
+static int Additionner(int a, int b)
+{
+    return a + b;
+}
+
+// Appel des méthodes
+AfficherMessage("Bonjour !");
+int resultat = Additionner(5, 3);
+Console.WriteLine($"5 + 3 = {resultat}");
+            </pre>
+        </section>
+
+        <section id="classes" class="section">
+            <h2>Classes et Objets</h2>
+            <p>C# est un langage orienté objet qui utilise des classes pour créer des objets :</p>
+            <pre>
+// Définition d'une classe
+class Personne
+{
+    // Propriétés
+    public string Nom { get; set; }
+    public int Age { get; set; }
+    
+    // Constructeur
+    public Personne(string nom, int age)
+    {
+        Nom = nom;
+        Age = age;
+    }
+    
+    // Méthode
+    public void SePresenter()
+    {
+        Console.WriteLine($"Bonjour, je m'appelle {Nom} et j'ai {Age} ans.");
+    }
+}
+
+// Création et utilisation d'objets
+Personne personne1 = new Personne("Marie", 30);
+Personne personne2 = new Personne("Pierre", 25);
+
+personne1.SePresenter();
+personne2.SePresenter();
+            </pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 - AbdoTCH - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
